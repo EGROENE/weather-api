@@ -1,3 +1,82 @@
+:root {
+    --size-4: 0.25rem;
+    --size-8: 0.5rem;
+    --size-12: 0.75rem;
+    --size-16: 1rem;
+    --size-20: 1.25rem;
+    --size-24: 1.5rem;
+    --size-32: 2rem;
+    --size-40: 2.5rem;
+    --size-48: 3rem;
+    --size-56: 3.5rem;
+    --size-64: 4rem;
+}
+
 body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.info-container {
+    background: rgba(0,0,0,0.8);
+    color: white;
+    text-align: center;
+    padding: var(--size-40);
+    border-radius: var(--size-16);
+}
+
+.search-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#searchbar {
+    background: rgba(0,0,0,0.8);
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    border-left: 2px solid white;
+    color: white;
+    padding: var(--size-8);
+    border-radius: var(--size-4);
+    font-size: var(--size-24);
+}
+
+#searchbar:focus {
+    outline: none;
+}
+
+.search-area i {
+    background-color: white;
+    color: black;
+    padding: var(--size-4) var(--size-16);
+    height: 40px;
+    border-top-right-radius: var(--size-4);
+    border-bottom-right-radius: var(--size-4);
+    margin-left: -4px;
+    display: flex;
+    align-items: center;
+    font-size: var(--size-24);
+}
+
+.search-area i:hover {
+    cursor: pointer;
+}
+
+.weather-box {
+    text-align: left;
+    margin-top: var(--size-24);
+}
+
+#city-name {
+    font-size: var(--size-32);
+    font-weight: 800;
+}
+
+.weather-box p {
+    font-size: var(--size-24);
 }
