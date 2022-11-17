@@ -1,4 +1,6 @@
 let weather = {
+    // First, function to greet user & prompt user to search
+    // This header should be hidden upon search
     apiKey: 'f823abc88bba5b208011945b7b58e9a5',
     getWeatherMetric: function (city) {
         fetch(
@@ -42,6 +44,7 @@ let weather = {
         windSpeedArea.innerHTML = 'Wind Speed: ' + speed + ' km/h';
     },
     search: function () {
+        document.getElementById('greeting').style.display = 'none';
         this.getWeatherMetric(document.getElementById('searchbar').value);
     }
 }
