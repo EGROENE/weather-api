@@ -15,7 +15,7 @@ const initBGImages = [
 const setInitBG = () => {
     let initBGImagesLength = initBGImages.length;
     let randomNum = Math.floor(Math.random() * initBGImagesLength);
-    document.body.style.background = initBGImages[randomNum];
+    document.body.style.backgroundImage = 'url("' + initBGImages[randomNum] + '")';
 }
 setInitBG();
 
