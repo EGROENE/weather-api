@@ -42,6 +42,9 @@ let weather = {
         // Display wind speed:
         const windSpeedArea = document.querySelector('#wind-speed');
         windSpeedArea.innerHTML = 'Wind Speed: ' + speed + ' km/h';
+
+        // Set bg image based on location:
+        document.body.style.backgroundImage = 'url("https://source.unsplash.com/1600x900/?' + name + '")'
     },
     search: function () {
         document.getElementById('greeting').style.display = 'none';
