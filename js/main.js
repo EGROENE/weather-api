@@ -20,8 +20,6 @@ const setInitBG = () => {
 setInitBG();
 
 let weather = {
-    // First, function to greet user & prompt user to search
-    // This header should be hidden upon search
     apiKey: 'f823abc88bba5b208011945b7b58e9a5',
     getWeatherMetric: function (city) {
         fetch(
@@ -81,7 +79,6 @@ document
     })
 document.querySelector('#searchbar').addEventListener('keyup', function(event) {
     if (event.key == 'Enter') {
-        console.log('hi')
         weather.search();
     }
 })
