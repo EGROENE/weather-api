@@ -49,7 +49,7 @@ let weather = {
     }
 }
 
-// Add search functionality:
+// Search for info (call API) upon clicking of search icon and/or pressing of 'Enter' key once something is typed in search bar:
 document
     .querySelector('.search-btn')
     .addEventListener('click', function() {
