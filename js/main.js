@@ -33,6 +33,7 @@ let weather = {
     displayWeatherMetric: function(data) {
         // Extract certain info from API to display:
         const { name } = data;
+        const { country } = data.sys;
         const { icon, description } = data.weather[0];
         const { temp, humidity } = data.main;
         const { speed } = data.wind;
@@ -40,7 +41,7 @@ let weather = {
 
         // Display city name:
         const cityNameArea = document.querySelector('#city-name');
-        cityNameArea.innerHTML = 'Weather in ' + name;
+        cityNameArea.innerHTML = 'Weather in ' + name + ', ' + country;
 
         // Display temperature:
         const tempArea = document.querySelector('#temp');
