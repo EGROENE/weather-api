@@ -40,5 +40,21 @@ let weather = {
         // Display wind speed:
         const windSpeedArea = document.querySelector('#wind-speed');
         windSpeedArea.innerHTML = 'Wind Speed: ' + speed + ' km/h';
+    },
+    search: function () {
+        this.getWeatherMetric(document.getElementById('searchbar').value);
     }
 }
+
+// Add search functionality:
+document
+    .querySelector('.search-btn')
+    .addEventListener('click', function() {
+        weather.search();
+    })
+document.querySelector('#searchbar').addEventListener('keyup', function(event) {
+    if (event.key == 'Enter') {
+        console.log('hi')
+        weather.search();
+    }
+})
