@@ -45,7 +45,7 @@ let weather = {
 
         // Display temperature:
         const tempArea = document.querySelector('#temp');
-        tempArea.innerHTML = temp.toFixed(2) + '°';
+        tempArea.innerHTML = temp.toFixed(2) + '°C';
 
         // Display cloud cover:
         const cloudCoverArea = document.querySelector('#cloud-cover');
