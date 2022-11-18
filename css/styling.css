@@ -79,4 +79,5 @@ body {
 
 .weather-box p {
     font-size: var(--size-24);
+    text-transform: capitalize;
 }
