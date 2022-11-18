@@ -36,6 +36,7 @@ let weather = {
         const { country } = data.sys;
         const { icon, description } = data.weather[0];
         const { temp, humidity } = data.main;
+        const tempF = (temp * 1.8) + 32;
         const { speed } = data.wind;
         console.log(name, icon, description, temp, humidity, speed);
 
@@ -45,7 +46,7 @@ let weather = {
 
         // Display temperature:
         const tempArea = document.querySelector('#temp');
-        tempArea.innerHTML = temp.toFixed(2) + '°C';
+        tempArea.innerHTML = temp.toFixed(2) + '°C | ' + tempF.toFixed(2) + '°F' 
 
         // Display cloud cover:
         const cloudCoverArea = document.querySelector('#cloud-cover');
