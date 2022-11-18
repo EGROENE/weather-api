@@ -38,6 +38,7 @@ let weather = {
         const { temp, humidity } = data.main;
         const tempF = (temp * 1.8) + 32;
         const { speed } = data.wind;
+        const speedMiles = (speed * 0.6213712).toFixed(2);
         console.log(name, icon, description, temp, humidity, speed);
 
         // Display city name:
@@ -62,7 +63,7 @@ let weather = {
 
         // Display wind speed:
         const windSpeedArea = document.querySelector('#wind-speed');
-        windSpeedArea.innerHTML = 'Wind Speed: ' + speed + ' km/h';
+        windSpeedArea.innerHTML = 'Wind Speed: ' + speed + ' km/h | ' + speedMiles + ' mph'
 
         // Set bg image based on location:
         document.body.style.backgroundImage = 'url("https://source.unsplash.com/1600x900/?' + name + '")'
