@@ -28,9 +28,9 @@ let weather = {
             + '&appid=' + this.apiKey
         )
         .then((response) => response.json())
-        .then((data) => this.displayWeatherMetric(data));
+        .then((data) => this.displayWeather(data));
     },
-    displayWeatherMetric: function(data) {
+    displayWeather: function(data) {
         // Extract certain info from API to display:
         const { name } = data;
         const { country } = data.sys;
