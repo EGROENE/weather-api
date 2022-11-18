@@ -81,3 +81,7 @@ body {
     font-size: var(--size-24);
     text-transform: capitalize;
 }
+
+.weather-box p:last-child {
+    text-transform: none;
+}
