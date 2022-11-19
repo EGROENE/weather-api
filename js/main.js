@@ -21,9 +21,9 @@ setInitBG();
 
 let weather = {
     apiKey: 'f823abc88bba5b208011945b7b58e9a5',
-    getWeatherMetric: function (city) {
+    getWeatherMetric: function (zipCode) {
         fetch(
-            'https://api.openweathermap.org/data/2.5/weather?q=' + city 
+            'https://api.openweathermap.org/data/2.5/weather?zip=' + zipCode
             + '&units=metric'
             + '&appid=' + this.apiKey
         )
@@ -33,7 +33,6 @@ let weather = {
     displayWeather: function(data) {
         // Extract certain info from API to display:
         const { name } = data;
-        const { country } = data.sys;
         const { icon, description } = data.weather[0];
         const { temp, humidity } = data.main;
         const tempF = (temp * 1.8) + 32;
@@ -43,11 +42,11 @@ let weather = {
 
         // Display city name:
         const cityNameArea = document.querySelector('#city-name');
-        cityNameArea.innerHTML = 'Weather in ' + name + ', ' + country;
+        cityNameArea.innerHTML = 'Weather in ' + name;
 
         // Display temperature:
         const tempArea = document.querySelector('#temp');
-        tempArea.innerHTML = temp.toFixed(2) + '°C | ' + tempF.toFixed(2) + '°F' 
+        tempArea.innerHTML = tempF.toFixed(2) + '°F | ' + temp.toFixed(2) + '°C'
 
         // Display cloud cover:
         const cloudCoverArea = document.querySelector('#cloud-cover');
@@ -63,7 +62,7 @@ let weather = {
 
         // Display wind speed:
         const windSpeedArea = document.querySelector('#wind-speed');
-        windSpeedArea.innerHTML = 'Wind Speed: ' + speed + ' km/h | ' + speedMiles + ' mph'
+        windSpeedArea.innerHTML = 'Wind Speed: ' + speedMiles + ' mph | ' + speed + ' km/h'
 
         // Set bg image based on location:
         document.body.style.backgroundImage = 'url("https://source.unsplash.com/1600x900/?' + name + '")'
