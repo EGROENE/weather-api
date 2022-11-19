@@ -28,7 +28,8 @@ let weather = {
             + '&appid=' + this.apiKey
         )
         .then((response) => response.json())
-        .then((data) => this.displayWeather(data));
+        .then((data) => this.displayWeather(data))
+        .catch(document.getElementById('not-found').innerHTML += 'Please enter a valid US ZIP code.');
     },
     displayWeather: function(data) {
         // Extract certain info from API to display:
