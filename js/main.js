@@ -22,24 +22,27 @@ setInitBG();
 let weather = {
     apiKey: 'f823abc88bba5b208011945b7b58e9a5',
     getWeatherMetric: function (zipCode) {
-        fetch(
+        let apiCall = fetch(
             'https://api.openweathermap.org/data/2.5/weather?zip=' + zipCode
             + '&units=metric'
             + '&appid=' + this.apiKey
         )
         .then((response) => response.json())
         .then((data) => this.displayWeather(data))
-        .catch(document.getElementById('not-found').innerHTML += 'Please enter a valid US ZIP code.');
+        .catch(err => {
+            document.getElementById('not-found').style.display = 'block';
+            document.getElementById('not-found').innerHTML = 'Please enter a valid ZIP code.';
+        })
     },
     displayWeather: function(data) {
+        document.getElementById('not-found').style.display = 'none';
         // Extract certain info from API to display:
         const { name } = data;
-        const { icon, description } = data.weather[0];
+        const { description } = data.weather[0];
         const { temp, humidity } = data.main;
         const tempF = (temp * 1.8) + 32;
         const { speed } = data.wind;
         const speedMiles = (speed * 0.6213712).toFixed(2);
-        console.log(name, icon, description, temp, humidity, speed);
 
         // Display city name:
         const cityNameArea = document.querySelector('#city-name');
