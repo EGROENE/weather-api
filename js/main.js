@@ -57,7 +57,7 @@ let weather = {
         const cloudCoverArea = document.querySelector('#cloud-cover');
         cloudCoverArea.innerHTML = description;
 
-        // Display cloud cover icon:
+        // Display cloud cover icon (leave commented-out code for now; may add this later):
         /* const cloudCoverIconArea = document.querySelector('#cloud-cover-icon');
         cloudCoverIconArea.src = 'https://openweathermap.org/img/wn/' + icon + '@2x.png'; */
 
