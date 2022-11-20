@@ -36,6 +36,7 @@ let weather = {
     },
     displayWeather: function(data) {
         document.getElementById('not-found').style.display = 'none';
+        document.getElementById('loading').style.display = 'none';
         // Extract certain info from API to display:
         const { name } = data;
         const { description } = data.weather[0];
@@ -73,6 +74,7 @@ let weather = {
     },
     search: function () {
         document.getElementById('greeting').style.display = 'none';
+        document.getElementById('loading').innerHTML = 'Wait a second (or less)...';
         this.getWeatherMetric(document.getElementById('searchbar').value);
     }
 }
