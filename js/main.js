@@ -75,7 +75,7 @@ let weather = {
     search: function () {
         document.getElementById('greeting').style.display = 'none';
         document.getElementById('loading').innerHTML = 'Wait a second (or less)...';
-        this.getWeatherMetric(document.getElementById('searchbar').value);
+        this.getWeatherMetric(document.getElementById('searchbar').value.trim());
     }
 }
 
