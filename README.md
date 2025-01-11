@@ -1,4 +1,7 @@
 ﻿# weather-api
+
+NOTE: This is one of my first JavaScript projects. I have not maintained the code, nor revised it, so please refrain from judging my current abilities based on the code you see here. I got the project to work how I envisioned. I may revamp the code if I have the time in the future.
+ 
 This web app that allows users to check the current weather conditions for a particular ZIP code in the US. To display that info, I used *vanilla* JS to fetch data from an API from OpenWeather & used destructuring to display only certain data.  
 
 Upon page load, I looped through an array of image URLs (from Unsplash) and randomly set one as the initial background image. On the homepage, the user is prompted to enter a ZIP code. If they entered an invalid one, I built in some error handling to prompt the user to enter a valid one.  
